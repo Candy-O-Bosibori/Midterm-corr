@@ -89,22 +89,22 @@ public class DoublyLinkedList<T>{
 		*/
 
 		while (first != null && first.data.equals(item)) {
-        first = first.next;
-        if (first != null) {
-            first.prev = null;
-        }
-        size--;
-    }
+        		first = first.next;
+        		if (first != null) {
+            		first.prev = null;
+        		}
+        		size--;
+    		}
 
-    	Node current = first;
-    	while (current != null && current.next != null) {
-        	if (current.next.data.equals(item)) {
-            	Node toRemove = current.next;
-            	current.next = toRemove.next;
-            	if (toRemove.next != null) {
-                	toRemove.next.prev = current;
+    			Node current = first;
+    			while (current != null && current.next != null) {
+        			if (current.next.data.equals(item)) {
+            			Node toRemove = current.next;
+            			current.next = toRemove.next;
+            		if (toRemove.next != null) {
+                		toRemove.next.prev = current;
         		    }
-		        size--;
+		        	size--;
 		        } else {
 		            current = current.next;
 		        }
